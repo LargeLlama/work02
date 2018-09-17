@@ -12,7 +12,7 @@ int main()
     
     //for loop to print out each individual byte
     for(int i = 0; i < sizeof(num); i++)
-        printf("Byte #%d of num %d: %hhx\n", i, num, pointer++);    
+        printf("Byte #%d of num %d: %hhx\n", i, num, (*pointer)++);    
 
     //separator
     printf("===================================\n");
@@ -21,8 +21,8 @@ int main()
     //for loop to modify each byte by one
     for(int i = 0; i < sizeof(num); i++)
     {
-        pointer++;
-        printf("Increased byte #%d by 1\nIn decimal: %d\nIn hex: %x\nThe address: %p\n\n", i, pointer, pointer,  pointer);
+        (*pointer)++;
+        printf("Increased byte #%d by 1\nIn decimal: %d\nIn hex: %x\nThe address: %p\n\n", i, *pointer, *pointer,  pointer);
     }
 
     //separator
@@ -32,8 +32,8 @@ int main()
     //increment the value of pointer by 16
     for(int i = 0; i < sizeof(num); i++)
     {
-        (pointer) += 16;
-        printf("Increased byte #%d by 16\nIn decimal: %d\nIn hex: %x\nThe address: %p\n\n", i, pointer, pointer,  pointer);
+        (*pointer) += 16;
+        printf("Increased byte #%d by 16\nIn decimal: %d\nIn hex: %x\nThe address: %p\n\n", i, *pointer, *pointer,  pointer);
     }
 
     //separator
@@ -43,8 +43,8 @@ int main()
     //increment the value of pointer by 64
     for(int i = 0; i < sizeof(num); i++)
     {
-        (pointer) += 64;
-        printf("Increased byte #%d by 64\nIn decimal: %d\nIn hex: %x\nThe address: %p\n\n", i, pointer, pointer,  pointer);
+        (*pointer) += 64;
+        printf("Increased byte #%d by 64\nIn decimal: %d\nIn hex: %x\nThe address: %p\n\n", i, *pointer, *pointer,  pointer);
     }
 
 }
